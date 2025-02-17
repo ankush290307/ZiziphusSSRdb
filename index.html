@@ -12,20 +12,62 @@
 </head>
 <body>
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(90deg, #8B0000, #FF4500);">
     <div class="container">
-      <a class="navbar-brand" href="#">Ziziphus SSR DB</a>
+      <a class="navbar-brand" href="index.html">Ziziphus SSR DB</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+             <a class="nav-link active" href="index.html">Home</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="stats.html">Stats</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="about.html">About</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="contact.html">Contact</a>
+           </li>
+         </ul>
+      </div>
     </div>
   </nav>
 
   <!-- Main Container -->
-  <div class="container">
+  <div class="container mb-4">
     <header class="mb-4 text-center">
-      <h1>Ziziphus Microsatellite (SSR DB)</h1>
+      <h1 class="display-4">Ziziphus Microsatellite (SSR DB)</h1>
       <p class="lead">SSR markers for <em>Ziziphus mauritiana</em> (Indian jujube) and <em>Ziziphus jujuba</em> (Chinese jujube).</p>
     </header>
 
-    <!-- Controls -->
+    <!-- Carousel for Ziziphus Pictures -->
+    <div id="ziziphusCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+         <div class="carousel-item active">
+           <img src="https://source.unsplash.com/1200x400/?jujube" class="d-block w-100" alt="Ziziphus Fruit 1">
+         </div>
+         <div class="carousel-item">
+           <img src="https://source.unsplash.com/1200x400/?ziziphus" class="d-block w-100" alt="Ziziphus Fruit 2">
+         </div>
+         <div class="carousel-item">
+           <img src="https://source.unsplash.com/1200x400/?jujube-fruit" class="d-block w-100" alt="Ziziphus Fruit 3">
+         </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#ziziphusCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#ziziphusCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Data Controls -->
     <div class="row mb-3">
       <div class="col-md-4">
         <label for="speciesSelect" class="form-label">Select Species:</label>
@@ -55,18 +97,20 @@
               </tr>
             </thead>
             <tbody>
-              <!-- Data rows injected here -->
+              <!-- Data rows injected here by script.js -->
             </tbody>
           </table>
         </div>
       </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="mt-4 text-center text-muted">
-      <small>Data loaded from CSV files. &copy; 2025 Ziziphus Microsatellite (SSR DB)</small>
-    </footer>
   </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-white py-3">
+    <div class="container">
+      <small>Data loaded from CSV files. &copy; 2025 Ziziphus Microsatellite (SSR DB)</small>
+    </div>
+  </footer>
 
   <!-- Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
