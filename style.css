@@ -1,11 +1,20 @@
+/* Gradient background for the body (light pink to off-white) */
 body {
-  background-color: #f8f9fa;
+  background: linear-gradient(180deg, #ffe5e5, #f8f9fa);
 }
 
+/* Header styling */
 header h1 {
   font-weight: 700;
+  color: #8B0000;
 }
 
+/* Add margin for the card containing the table */
 .card {
   margin-top: 20px;
+}
+
+/* Optional: Style form inputs on the contact page if desired */
+form .form-control {
+  border-radius: 0.25rem;
 }
