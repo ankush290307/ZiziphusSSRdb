@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ziziphus Microsatellite (SSR DB)</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- PapaParse Library -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">Ziziphus SSR DB</a>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+    <header class="mb-4 text-center">
+      <h1>Ziziphus Microsatellite (SSR DB)</h1>
+      <p class="lead">SSR markers for <em>Ziziphus mauritiana</em> (Indian jujube) and <em>Ziziphus jujuba</em> (Chinese jujube).</p>
+    </header>
+
+    <!-- Controls -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="speciesSelect" class="form-label">Select Species:</label>
+        <select id="speciesSelect" class="form-select">
+          <option value="mauritiana">Ziziphus mauritiana (Indian jujube)</option>
+          <option value="jujuba">Ziziphus jujuba (Chinese jujube)</option>
+        </select>
+      </div>
+      <div class="col-md-8">
+        <label for="searchBox" class="form-label">Search Markers:</label>
+        <input type="text" id="searchBox" class="form-control" placeholder="Search markers...">
+      </div>
+    </div>
+
+    <!-- Results Table -->
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table id="markerTable" class="table table-striped table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th>Marker ID</th>
+                <th>Repeat Sequence</th>
+                <th>Primer Forward</th>
+                <th>Primer Reverse</th>
+                <th>Annealing Temp</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Data rows injected here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-4 text-center text-muted">
+      <small>Data loaded from CSV files. &copy; 2025 Ziziphus Microsatellite (SSR DB)</small>
+    </footer>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
