@@ -25,10 +25,11 @@ function loadCSV(filePath) {
 // Display data in the table
 function displayTable(data) {
   const tbody = document.querySelector('#markerTable tbody');
+  if (!tbody) return;
   tbody.innerHTML = ''; // Clear previous rows
 
   data.forEach(row => {
-    // Check for an empty row
+    // Skip rows that are entirely empty
     if (!row.MarkerID && !row.RepeatSequence && !row.PrimerForward && !row.PrimerReverse && !row.AnnealingTemp) return;
 
     const tr = document.createElement('tr');
@@ -55,7 +56,7 @@ function filterTable() {
 }
 
 // Event listener for species selection
-document.getElementById('speciesSelect').addEventListener('change', (e) => {
+document.getElementById('speciesSelect')?.addEventListener('change', (e) => {
   const species = e.target.value;
   loadCSV(csvFiles[species]);
   // Clear search box when switching species
@@ -63,9 +64,11 @@ document.getElementById('speciesSelect').addEventListener('change', (e) => {
 });
 
 // Event listener for in-page search
-document.getElementById('searchBox').addEventListener('input', filterTable);
+document.getElementById('searchBox')?.addEventListener('input', filterTable);
 
-// Initial load for default species (mauritiana)
+// Initial load for default species (mauritiana) on index.html only
 window.addEventListener('DOMContentLoaded', () => {
-  loadCSV(csvFiles['mauritiana']);
+  if (document.getElementById('speciesSelect')) {
+    loadCSV(csvFiles['mauritiana']);
+  }
 });
