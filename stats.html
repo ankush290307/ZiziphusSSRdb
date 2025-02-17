@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ziziphus - Stats</title>
+  <title>Stats - Ziziphus SSR DB</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
@@ -22,7 +22,7 @@
              <a class="nav-link" href="index.html">Home</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link active" href="Ziziphus.html">Stats</a>
+             <a class="nav-link active" href="stats.html">Stats</a>
            </li>
            <li class="nav-item">
              <a class="nav-link" href="about.html">About</a>
@@ -37,36 +37,10 @@
 
   <!-- Main Content -->
   <div class="container my-5">
-    <h1 class="mb-4">Ziziphus Statistics & Insights</h1>
-    <p>Welcome to the Ziziphus statistics page. Here you will find data-driven insights, charts, and visualizations regarding the SSR marker data, growth parameters, and other relevant statistics for Ziziphus species.</p>
-    
-    <!-- Example Content Section -->
-    <div class="card mb-4">
-      <div class="card-header">
-        Data Overview
-      </div>
-      <div class="card-body">
-        <p>This section provides an overview of the available SSR marker data for <strong>Ziziphus mauritiana</strong> and <strong>Ziziphus jujuba</strong>. Detailed statistics include marker distribution, frequency analysis, and comparative charts between the two species.</p>
-      </div>
-    </div>
-
-    <div class="card mb-4">
-      <div class="card-header">
-        Visualizations
-      </div>
-      <div class="card-body">
-        <p>Interactive charts and graphs will be displayed here. These visualizations aim to highlight key differences and trends in the SSR marker profiles across different samples and experiments.</p>
-        <!-- Insert your charts or embed code here -->
-      </div>
-    </div>
-
-    <div class="card mb-4">
-      <div class="card-header">
-        Future Work
-      </div>
-      <div class="card-body">
-        <p>We are continuously working on integrating more detailed analyses, such as marker linkage maps and genomic correlations. Stay tuned for updates!</p>
-      </div>
+    <h1 class="mb-4">Statistics Report</h1>
+    <!-- Container where the contents of ziziphus.html will be inserted -->
+    <div id="ziziphus-report-container">
+      <!-- The report content will be loaded here via JavaScript -->
     </div>
   </div>
 
@@ -79,5 +53,26 @@
 
   <!-- Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- JavaScript to load the ziziphus.html content into the container -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("ziziphus.html")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById("ziziphus-report-container").innerHTML = data;
+        })
+        .catch(error => {
+          console.error("Error loading the Ziziphus report:", error);
+          document.getElementById("ziziphus-report-container").innerHTML = 
+            "<div class='alert alert-danger'>Failed to load the statistics report.</div>";
+        });
+    });
+  </script>
 </body>
 </html>
